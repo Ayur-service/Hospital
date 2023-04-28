@@ -18,7 +18,9 @@ class DBSettings(AppSettings):
 
 
 class JWT_Settings:
-    public_key: str = serialization.load_ssh_public_key(open("./auth.pub", "r").read().encode())
+    public_key_path: str = Path(__file__).parent.joinpath("./auth.pub")
+
+    public_key: str = serialization.load_ssh_public_key(open(public_key_path, "r").read().encode())
     algorithm: str = "RS256"
     validity: int = 21600
     aud = ["hospital"]

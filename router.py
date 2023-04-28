@@ -16,7 +16,7 @@ from utils.database import DataBase, Hospitals, Address, Doctors
 from models import Hospital, Doctor, AddDoctor, AddHospital
 from utils.uuid import generate_id
 
-hospital_router = APIRouter(prefix="/hospital")
+hospital_router = APIRouter()
 
 
 @hospital_router.get("/staffs", status_code=status.HTTP_200_OK, tags=["staff"])
